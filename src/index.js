@@ -40,3 +40,24 @@ function addClickEvent(){
         })
     }
 }
+
+//Posting movie details , poster to be displayed;
+function setUpMovieDetails(funMovie){
+    const preview = document.getElementById('poster')
+    preview.src = funMovie.poster;
+//title
+    const movieTitle = document.querySelector('#title');
+    movieTitle.textContent = funMovie.title;
+    //runtime
+    const movieTime = document.querySelector('#runtime');
+    movieTime.textContent = `${funMovie.runtime} minutes`;
+    //description
+    const movieDescription = document.querySelector('#film-info');
+    movieDescription.textContent = funMovie.description;
+    //Showtime
+    const showTime = document.querySelector('#showtime')
+    showTime.textContent = funMovie.showtime;
+    // available tickets =capacity - tickets sold
+    const tickets  = document.querySelector('#ticket-number')
+    tickets.textContent = funMovie.capacity - funMovie.tickets_sold;
+}
