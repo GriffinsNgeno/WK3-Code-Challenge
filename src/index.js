@@ -24,3 +24,19 @@ function displayMovie(movie){
     listHolder.appendChild(list)
     addClickEvent()
 }
+
+//Adding the click event listener;
+function addClickEvent(){
+    let children=listHolder.children
+    for(let i=0; i<children.length; i++){
+        let child=children[i]
+        child.addEventListener('click',() => {
+            fetch(`${URL}/${i+1}`)
+            .then(res => res.json())
+            .then(movie => {
+                document.getElementById('buy-ticket').textContent = 'Buy Ticket'
+                setUpMovieDetails(movie)
+            })
+        })
+    }
+}
