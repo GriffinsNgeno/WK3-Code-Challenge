@@ -1,10 +1,6 @@
-let form = document.getElementById('myForm')
-
-form.addEventListener('submit', e => {
-    e.preventDefault()
-
-    let search = document.getElementById('search').value 
-    // alert(search)
-
-    fetch('')
+let URL = 'http://localhost:3000/films'
+const listHolder = document.getElementById('films')
+document.addEventListener('DOMContentLoaded', ()=>{
+    document.getElementsByClassName('film item')[0].remove()
+    fetchMovies(URL)
 })
